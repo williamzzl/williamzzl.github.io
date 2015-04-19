@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Github - William张兆麟</title>
+        <!-- meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="generator" content="Jekyll" />
+        <meta name="author" content="William张兆麟" />
+        <meta name="description" content="交流Docker和Linux技术的平台。" />
+        <meta name="keywords" content="Jekyll theme, Kunka" />
+        <!-- atom -->
+        <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://127.0.0.1:4000/atom.xml" />
+        <link rel="shortcut icon" href="http://jekyllrb.com/favicon.png" type="image/x-icon" />
+        <!-- font-awesome -->
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Spirax' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://127.0.0.1:4000/css/syntax.css">
+        <link rel="stylesheet" href="http://127.0.0.1:4000/css/main.css">
+        
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-62022511-1']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+              var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+              var s = document.getElementsByTagName('script')[0];
+                  s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        
+    </head>
+    <body>
+        <div class="head fn-clear">
+            <div class="header">
+                <h1 class="logo">
+                    <a href="http://127.0.0.1:4000"><i class="icon-anchor"></i></a>
+                </h1>
+                <nav class="nav">
+                    <ul>
+                        
+                        
+                        
+                          
+                        
+                        <li class="nav-item nav-item-active">
+                            <a href="http://127.0.0.1:4000/index.html">
+                                首页
+                            </a>
+                            
+                        </li>
+                        
+                        
+                        
+                        <li class="nav-item ">
+                            <a href="http://127.0.0.1:4000/categories.html">
+                                分类目录
+                            </a>
+                            
+                        </li>
+                        
+                        
+                        
+                        <li class="nav-item ">
+                            <a href="http://127.0.0.1:4000/archives.html">
+                                文章归档
+                            </a>
+                            
+                        </li>
+                        
+                        
+                        
+                        <li class="nav-item ">
+                            <a href="http://127.0.0.1:4000/contact.html">
+                                联系我
+                            </a>
+                            
+                        </li>
+                        
+                        
+                        
+                        <li class="nav-item ">
+                            <a href="http://127.0.0.1:4000/links.html">
+                                友情链接
+                            </a>
+                            
+                        </li>
+                        
+                    </ul>
+                </nav>
+                <div class="follow">
+                    
+                    <a href="/atom.xml" target="_blank"><i class="icon-rss"></i></a>
+                    
+                    <a href="http://weibo.com/u/1409861922" target="_blank"><i class="icon-weibo"></i></a>
+                    
+                    <a href="http://renren.com" target="_blank"><i class="icon-renren"></i></a>
+                    
+                    <a href="http://github.com/williamzzl" target="_blank"><i class="icon-github-alt"></i></a>
+                    
+                    <a href="http://twitter.com/piznlin" target="_blank"><i class="icon-twitter"></i></a>
+                    
+                    <a href="http://google.com" target="_blank"><i class="icon-google-plus"></i></a>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="contain fn-clear">
+            <div class="container fn-clear">
+                <div class="main">
+                    
+    <div class="article">
+        <h3 class="title"><a href="http://127.0.0.1:4000/coreos/2015/04/19/CoreOS%20Cloud-Config%E8%AF%A6%E8%A7%A3.html" title="CoreOS Cloud-Config详解">CoreOS Cloud-Config详解</a></h3>
+        <article class="rexp">
+            <p><h1 id="coreos-cloud-config">如何使用CoreOS Cloud-Config</h1>
+
+</p>
+        </article>
+        <a href="http://127.0.0.1:4000/coreos/2015/04/19/CoreOS%20Cloud-Config%E8%AF%A6%E8%A7%A3.html" class="more"><i class="icon-link"></i></a>
+        <div class="info">
+            <span class="info-title"><i class="icon-calendar"></i> Published: </span>
+            <span class="info-date">19 Apr 2015</span>
+        </div>
+    </div>
+
+    <div class="article">
+        <h3 class="title"><a href="http://127.0.0.1:4000/linux/2015/04/17/%E9%85%8D%E7%BD%AENTP%20Server%E6%A8%A1%E6%8B%9F%E9%97%B0%E7%A7%92(leap%20seconds)%E9%80%9A%E7%9F%A5.html" title="配置NTP Server模拟闰秒(leap seconds)通知">配置NTP Server模拟闰秒(leap seconds)通知</a></h3>
+        <article class="rexp">
+            <p><h1 id="ntp-serverleap-seconds">配置NTP Server模拟闰秒(leap seconds)通知</h1>
+
+<h3 id="section">背景</h3>
+<p>由于UTC时间和GPS时间的不完全一致，每隔一定时间系统需要增加一秒做调整。最近的一次将发生在2015-06-30 23:59:59(GMT)。如果使用date查看，届时会如下出现两个59秒(或多一个60秒):</p>
+
+<pre><code>[root@linux ~]# while true ; do date; sleep 1 ; done
+Tue Jun 30 23:59:58 GMT 2015
+Tue Jun 30 23:59:59 GMT 2015
+Tue Jun 30 23:59:59 GMT 2015
+Wed Jul  1 00:00:00 GMT 2015
+Wed Jul  1 00:00:01 GMT 2015
+</code></pre>
+
+<h3 id="section-1">需求</h3>
+<p>为了测试系统对leap seconds的行为，需要配置NTP server来模拟GPS Server对闰秒时间做出通知。</p>
+
+<h3 id="ntp-server">配置NTP Server</h3>
+<p>参考<a href="http://support.ntp.org/bin/view/Support/ConfiguringNTP#Section_6.14.">ntp org</a>，对于4.2.6以上的NTP Server版本，放置文件<a href="ftp://time.nist.gov/pub/leap-seconds.3629404800">leap-seconds.3629404800</a>在NTP Server(如<code>/etc/ntp/crypto/</code>)，并且将路径配置在/etc/ntp.conf中：</p>
+
+<pre><code>[root@linux ~]# less /etc/ntp.conf
+leapfile  /etc/ntp/crypto/leap-seconds.3629404800
+</code></pre>
+
+<blockquote>
+  <p>对于4.2.6以前版本，需要<a href="http://support.ntp.org/bin/view/Support/ConfiguringAutokeyFourTwoFour">开启autokey</a>功能，并配置相应的leapsecond信息。但比较复杂，所以建议先尝试升级NTP版本（只需要升级Server端版本）。</p>
+</blockquote>
+
+<p>将系统时间调整到leapsecond时间发生时间附近(对于GMT时间，执行以下命令)：</p>
+
+<pre><code>[root@linux ~]# date --set="20150630 23:50:00"
+</code></pre>
+
+<p>等待client完成对Server的同步后，可以看到Client的时间在23:59:59之后会增加一秒（59秒或60秒）。并且Server端的log会显示leap event通知：</p>
+
+<pre><code>[root@linux ~]# tail -f /var/log/ntp
+30 Jun 23:50:04 ntpd[18017]: 0.0.0.0 c01e 0e TAI 36 leap 201507010000 expire 201512280000
+30 Jun 23:50:04 ntpd[18017]: 0.0.0.0 c016 06 restart
+30 Jun 23:50:04 ntpd[18017]: 0.0.0.0 c012 02 freq_set kernel 0.000 PPM
+30 Jun 23:50:05 ntpd[18017]: 0.0.0.0 c515 05 clock_sync
+30 Jun 23:50:05 ntpd[18017]: 0.0.0.0 0519 09 leap_armed
+30 Jun 23:59:59 ntpd[18017]: 0.0.0.0 051b 0b leap_event
+</code></pre>
+
+</p>
+        </article>
+        <a href="http://127.0.0.1:4000/linux/2015/04/17/%E9%85%8D%E7%BD%AENTP%20Server%E6%A8%A1%E6%8B%9F%E9%97%B0%E7%A7%92(leap%20seconds)%E9%80%9A%E7%9F%A5.html" class="more"><i class="icon-link"></i></a>
+        <div class="info">
+            <span class="info-title"><i class="icon-calendar"></i> Published: </span>
+            <span class="info-date">17 Apr 2015</span>
+        </div>
+    </div>
+
+    <div class="article">
+        <h3 class="title"><a href="http://127.0.0.1:4000/kubernetes/2015/04/11/Kubernetes%E6%A6%82%E8%BF%B0.html" title="Kubernetes概述">Kubernetes概述</a></h3>
+        <article class="rexp">
+            <p><h1 id="kubernetes-">Kubernetes 概述</h1>
+
+</p>
+        </article>
+        <a href="http://127.0.0.1:4000/kubernetes/2015/04/11/Kubernetes%E6%A6%82%E8%BF%B0.html" class="more"><i class="icon-link"></i></a>
+        <div class="info">
+            <span class="info-title"><i class="icon-calendar"></i> Published: </span>
+            <span class="info-date">11 Apr 2015</span>
+        </div>
+    </div>
+
+    <div class="article">
+        <h3 class="title"><a href="http://127.0.0.1:4000/jekyll/2015/04/01/Github%20+%20Jekyll%20%E5%BB%BA%E7%AB%99%20MAC%E7%AF%87.html" title="Github + Jekyll 建站 MAC篇">Github + Jekyll 建站 MAC篇</a></h3>
+        <article class="rexp">
+            <p><h3 id="ruby">配置ruby</h3>
+
+</p>
+        </article>
+        <a href="http://127.0.0.1:4000/jekyll/2015/04/01/Github%20+%20Jekyll%20%E5%BB%BA%E7%AB%99%20MAC%E7%AF%87.html" class="more"><i class="icon-link"></i></a>
+        <div class="info">
+            <span class="info-title"><i class="icon-calendar"></i> Published: </span>
+            <span class="info-date">01 Apr 2015</span>
+        </div>
+    </div>
+
+
+                </div>
+                <div class="aside">
+                    <div class="aside-contact">
+                        <h4 class="title">About me</h4>
+                        <div class="det fn-clear">
+                            <div class="det-image">
+                                <img src="/images/me.jpg" />
+                            </div>
+                            <div class="det-text">
+                                <p>我是「William」，关注Docker和Linux发展的爱好者。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="aside-item">
+                        <h4 class="title">Recent Posts</h4>
+                        <ul class="list">
+                            
+                                <li><a href="http://127.0.0.1:4000/coreos/2015/04/19/CoreOS%20Cloud-Config%E8%AF%A6%E8%A7%A3.html" title="CoreOS Cloud-Config详解" rel="bookmark">CoreOS Cloud-Config详解</a></li>
+                            
+                                <li><a href="http://127.0.0.1:4000/linux/2015/04/17/%E9%85%8D%E7%BD%AENTP%20Server%E6%A8%A1%E6%8B%9F%E9%97%B0%E7%A7%92(leap%20seconds)%E9%80%9A%E7%9F%A5.html" title="配置NTP Server模拟闰秒(leap seconds)通知" rel="bookmark">配置NTP Server模拟闰秒(leap seconds)通知</a></li>
+                            
+                                <li><a href="http://127.0.0.1:4000/kubernetes/2015/04/11/Kubernetes%E6%A6%82%E8%BF%B0.html" title="Kubernetes概述" rel="bookmark">Kubernetes概述</a></li>
+                            
+                                <li><a href="http://127.0.0.1:4000/jekyll/2015/04/01/Github%20+%20Jekyll%20%E5%BB%BA%E7%AB%99%20MAC%E7%AF%87.html" title="Github + Jekyll 建站 MAC篇" rel="bookmark">Github + Jekyll 建站 MAC篇</a></li>
+                            
+                        </ul>
+                    </div>
+
+                    <div class="aside-item">
+                        <h4 class="title">Links</h4>
+                        <ul class="list">
+                            
+                                
+                                    
+                                    <li><a href="http://williamzzl.github.io" title="William张兆麟的Docker站" target="_blank">William张兆麟的Docker站</a></li>
+                                    
+                                    <li><a href="http://jekyllrb.com" title="Jekyll" target="_blank">Jekyll</a></li>
+                                    
+                                
+                            
+                                
+                            
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="foot">
+            <div class="footer">
+                <p>Copyright 2013. All rights reserved. Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a>.</p>
+            </div>
+        </div>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        
+    </body>
+</html>

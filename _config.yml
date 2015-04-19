@@ -1,0 +1,116 @@
+# Where things are
+source:       .
+destination:  ./_site
+plugins:      ./_plugins
+layouts:      ./_layouts
+paginate:     8
+
+# Handling Reading
+safe:         false
+include:      [".htaccess"]
+exclude:      []
+keep_files:   [".git", ".svn"]
+encoding:     "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+textile_ext:  "textile"
+
+# Filtering Content
+show_drafts:  null
+limit_posts:  0
+future:       true
+unpublished:  false
+
+# Conversion
+markdown:     kramdown
+highlighter:  pygments
+lsi:          false
+excerpt_separator: "\n\n"
+
+# Serving
+detach:       false
+port:         4000
+host:         127.0.0.1
+baseurl:      "" # does not include hostname
+
+# Outputting
+permalink:     date
+paginate_path: /page:num
+timezone:      null
+
+
+#Site config
+title: William张兆麟
+description: 交流Docker和Linux技术的平台。
+keywords: Jekyll Theme
+url: http://williamzzl.github.io
+#url: http://127.0.0.1:4000
+feed: /atom.xml
+favicon: http://jekyllrb.com/favicon.png
+
+#Nav config
+nav:
+  - text: 首页
+    url: /index.html
+  - text: 分类目录 
+    url: /categories.html
+  - text: 文章归档
+    url: /archives.html
+  - text: 联系我
+    url: /contact.html
+  - text: 友情链接
+    url: /links.html
+
+#Author config
+author:
+    name: William张兆麟
+    email: william_zzl@sina.com
+    imageLink: /images/me.jpg
+    simpleIntro: 我是「William」，关注Docker和Linux发展的爱好者。
+    detailIntro:
+      <p>我最近才开始维护的个人博客，希望能够跟随Docker一起发展</p>
+
+#Follow me, you can choose your icon by http://fortawesome.github.io/Font-Awesome/icons/#brand
+follow:
+  - class: icon-rss
+    url: /atom.xml
+  - class: icon-weibo
+    url: http://weibo.com/u/1409861922
+  - class: icon-renren
+    url: http://renren.com
+  - class: icon-github-alt
+    url: http://github.com/williamzzl
+  - class: icon-twitter
+    url: http://twitter.com/piznlin
+  - class: icon-google-plus
+    url: http://google.com
+
+#Links
+customLinks:
+  - item:
+    - text: William张兆麟的Docker站
+      url: http://williamzzl.github.io
+    - text: Jekyll
+      url: http://jekyllrb.com
+    message: Friends
+  - item:
+    - text: Font Awesome
+      url: http://fortawesome.github.io/Font-Awesome/
+    - text: Google Font
+      url: http://www.google.com/fonts/
+    - text: jQuery
+      url: http://jquery.com/
+    message: 其他相关链接
+
+#googleAnaly, your id link UA-12345678-X
+googleAnaly:
+  config: true
+  id: UA-62022511-1
+
+#comment config
+disqus:
+  config: false
+  id: williamzzl
+
+duoshuo:
+  config: true
+  id: williamzzl

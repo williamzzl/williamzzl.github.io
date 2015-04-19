@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Github + Jekyll 建站 MAC篇 - William张兆麟</title>
+        <!-- meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="generator" content="Jekyll" />
+        <meta name="author" content="William张兆麟" />
+        <meta name="description" content="交流Docker和Linux技术的平台。" />
+        <meta name="keywords" content="" />
+        <!-- atom -->
+        <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://127.0.0.1:4000/atom.xml" />
+        <link rel="shortcut icon" href="http://jekyllrb.com/favicon.png" type="image/x-icon" />
+        <!-- font-awesome -->
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Spirax' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://127.0.0.1:4000/css/syntax.css">
+        <link rel="stylesheet" href="http://127.0.0.1:4000/css/main.css">
+        
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-62022511-1']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+              var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+              var s = document.getElementsByTagName('script')[0];
+                  s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        
+    </head>
+    <body>
+        <div class="head fn-clear">
+            <div class="header">
+                <h1 class="logo">
+                    <a href="http://127.0.0.1:4000"><i class="icon-anchor"></i></a>
+                </h1>
+                <nav class="nav">
+                    <ul>
+                        
+                        
+                        
+                        <li class="nav-item ">
+                            <a href="http://127.0.0.1:4000/index.html">
+                                首页
+                            </a>
+                            
+                        </li>
+                        
+                        
+                        
+                        <li class="nav-item ">
+                            <a href="http://127.0.0.1:4000/categories.html">
+                                分类目录
+                            </a>
+                            
+                        </li>
+                        
+                        
+                        
+                        <li class="nav-item ">
+                            <a href="http://127.0.0.1:4000/archives.html">
+                                文章归档
+                            </a>
+                            
+                        </li>
+                        
+                        
+                        
+                        <li class="nav-item ">
+                            <a href="http://127.0.0.1:4000/contact.html">
+                                联系我
+                            </a>
+                            
+                        </li>
+                        
+                        
+                        
+                        <li class="nav-item ">
+                            <a href="http://127.0.0.1:4000/links.html">
+                                友情链接
+                            </a>
+                            
+                        </li>
+                        
+                    </ul>
+                </nav>
+                <div class="follow">
+                    
+                    <a href="/atom.xml" target="_blank"><i class="icon-rss"></i></a>
+                    
+                    <a href="http://weibo.com/u/1409861922" target="_blank"><i class="icon-weibo"></i></a>
+                    
+                    <a href="http://renren.com" target="_blank"><i class="icon-renren"></i></a>
+                    
+                    <a href="http://github.com/williamzzl" target="_blank"><i class="icon-github-alt"></i></a>
+                    
+                    <a href="http://twitter.com/piznlin" target="_blank"><i class="icon-twitter"></i></a>
+                    
+                    <a href="http://google.com" target="_blank"><i class="icon-google-plus"></i></a>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="contain fn-clear">
+            <div class="container fn-clear">
+                <div class="main">
+                    <div class="article article-post">
+    <h2 class="title">Github + Jekyll 建站 MAC篇</h2>
+    <div class="info">
+        <span class="info-title"><i class="icon-calendar"></i> Published: </span>
+        <span class="info-date">01 Apr 2015</span>
+        <span class="info-title"><i class="icon-folder-open"></i> Category: </span>
+        <span class="info-link"><a href="http://127.0.0.1:4000/categories.html#-ref" ></a></span>
+    </div>
+    <h3 id="ruby">配置ruby</h3>
+
+<p>升级MAC到最新的版本，确保ruby版本为2.0.0以上</p>
+
+<pre><code>$ ruby -v
+ruby 2.0.0p481 (2014-05-08 revision 45883) [universal.x86_64-darwin14]
+</code></pre>
+
+<p>考虑到墙内的网络问题，更换gem的source为taobao</p>
+
+<pre><code>$ gem source -l
+*** CURRENT SOURCES ***
+
+https://rubygems.org/
+$ gem source --remove https://rubygems.org/
+$ gem source -a http://ruby.taobao.org/
+$ gem source -l
+*** CURRENT SOURCES ***
+
+http://ruby.taobao.org/
+</code></pre>
+
+<h3 id="jekyll">安装jekyll</h3>
+
+<pre><code>$ sudo gem install jekyll
+</code></pre>
+
+<p>如果提示下面失败信息，按照提示执行 <code>sudo xcodebuild -license</code></p>
+
+<pre><code>Building native extensions.  This could take a while...
+ERROR:  Error installing jekyll:
+	ERROR: Failed to build gem native extension.
+	
+    /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby extconf.rb
+creating Makefile
+
+make "DESTDIR="
+
+You have not agreed to the Xcode license agreements, please run 'xcodebuild -license' (for user-level acceptance) or 'sudo xcodebuild -license' (for system-wide acceptance) from within a Terminal window to review and agree to the Xcode license agreements.
+
+
+Gem files will remain installed in /Library/Ruby/Gems/2.0.0/gems/yajl-ruby-1.2.1 for inspection.
+Results logged to /Library/Ruby/Gems/2.0.0/gems/yajl-ruby-1.2.1/ext/yajl/gem_make.out
+</code></pre>
+
+<p>然后重新执行<code>sudo gem install jekyll</code>安装jekyll</p>
+
+<h3 id="git">配置git</h3>
+
+<ul>
+  <li>在Server端新建repo</li>
+</ul>
+
+<p>注册登陆github，创建空的repo，假设你的ID为username，新创建的repo名字就为username.github.io</p>
+
+<pre><code># 在本地配置server信息
+$ git remote rm origin
+$ git remote add origin https://github.com/username/username.github.io.git
+</code></pre>
+
+<ul>
+  <li>在本地初始化repo并上传</li>
+</ul>
+
+<p>进入<a href="http://jekyllthemes.org/" title="jekyll themes">这里</a>，选择你喜欢的主题并下载。</p>
+
+<p>解压缩，进入目录，执行<code>git init</code>初始化project，并且提交初始版本：</p>
+
+<pre><code>$ git add .
+$ git commit -m "init project by template"
+$ git push -u origin master
+</code></pre>
+
+<blockquote>
+  <p>国内服务器没有VPN访问比较痛苦，大约重试2，3次之后才执行成功</p>
+</blockquote>
+
+<p>现在访问http://username.github.io，看看你自己的blog</p>
+
+<p>当然，这还不算真正你自己的blog，你还需要</p>
+
+<h3 id="section">修改并管理你的博客</h3>
+
+<p>定制blog，一般为修改根目录下的_config.yml，这里你需要修改title,description,logo等个人信息。</p>
+
+<p>管理，添加新的blog</p>
+
+<p>blog都存放在_posts目录下，注意文件名前面需要是yyyy-MM-dd格式，例如2015-03-31，里面参考现存的例子。修改完毕后，在根目录下执行<code>jekyll serve</code>来启动本地的web service，然后通过访问http://127.0.0.1:4000来查看你的任何修改，确认无误执行下面命令提交:</p>
+
+<pre><code>$ git commit -am "update my blog"
+$ git push -u origin master
+</code></pre>
+
+<p>邀请你的小伙伴们来访问你自己打造的blog吧。</p>
+
+
+    <nav class="article-previous fn-clear">
+        
+        
+        <a class="next" href="/kubernetes/2015/04/11/Kubernetes%E6%A6%82%E8%BF%B0.html" rel="bookmark">Kubernetes概述&nbsp;&raquo;</a>
+        
+    </nav>
+    <div class="comment">
+        
+            
+            <div class="ds-thread"></div>
+            
+        
+    </div>
+</div>
+
+                </div>
+                <div class="aside">
+                    <div class="aside-contact">
+                        <h4 class="title">About me</h4>
+                        <div class="det fn-clear">
+                            <div class="det-image">
+                                <img src="/images/me.jpg" />
+                            </div>
+                            <div class="det-text">
+                                <p>我是「William」，关注Docker和Linux发展的爱好者。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="aside-item">
+                        <h4 class="title">Recent Posts</h4>
+                        <ul class="list">
+                            
+                                <li><a href="http://127.0.0.1:4000/coreos/2015/04/19/CoreOS%20Cloud-Config%E8%AF%A6%E8%A7%A3.html" title="CoreOS Cloud-Config详解" rel="bookmark">CoreOS Cloud-Config详解</a></li>
+                            
+                                <li><a href="http://127.0.0.1:4000/linux/2015/04/17/%E9%85%8D%E7%BD%AENTP%20Server%E6%A8%A1%E6%8B%9F%E9%97%B0%E7%A7%92(leap%20seconds)%E9%80%9A%E7%9F%A5.html" title="配置NTP Server模拟闰秒(leap seconds)通知" rel="bookmark">配置NTP Server模拟闰秒(leap seconds)通知</a></li>
+                            
+                                <li><a href="http://127.0.0.1:4000/kubernetes/2015/04/11/Kubernetes%E6%A6%82%E8%BF%B0.html" title="Kubernetes概述" rel="bookmark">Kubernetes概述</a></li>
+                            
+                                <li><a href="http://127.0.0.1:4000/jekyll/2015/04/01/Github%20+%20Jekyll%20%E5%BB%BA%E7%AB%99%20MAC%E7%AF%87.html" title="Github + Jekyll 建站 MAC篇" rel="bookmark">Github + Jekyll 建站 MAC篇</a></li>
+                            
+                        </ul>
+                    </div>
+
+                    <div class="aside-item">
+                        <h4 class="title">Links</h4>
+                        <ul class="list">
+                            
+                                
+                                    
+                                    <li><a href="http://williamzzl.github.io" title="William张兆麟的Docker站" target="_blank">William张兆麟的Docker站</a></li>
+                                    
+                                    <li><a href="http://jekyllrb.com" title="Jekyll" target="_blank">Jekyll</a></li>
+                                    
+                                
+                            
+                                
+                            
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="foot">
+            <div class="footer">
+                <p>Copyright 2013. All rights reserved. Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a>.</p>
+            </div>
+        </div>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        
+            
+                
+                <script type="text/javascript">
+                    var duoshuoQuery = {short_name:"williamzzl"};
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';ds.async = true;
+                        ds.src = 'http://static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0]
+                        || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                </script>
+                
+            
+        
+    </body>
+</html>
