@@ -46,7 +46,7 @@ Kubernetes目前还不支持多用户场景。
 
 一个运行中的Kubernetes集群包括一个分布式存储上的一个或多个node agent和master组件(API，Scheduler等)。这个图显示了我们希望的最佳模型，其中有些部分还在设计之中，例如使kubelete本身(实际上应该是全部组件)运行在容器当中，并且使scheduler100%可被替换。
 
-![架构图](/assets/article_images/2015-04-11-Kubernetes概述/architecture.png?raw=true "架构图")
+![architechture](/images/architecture.png)
 
 ## 核心概念
 
